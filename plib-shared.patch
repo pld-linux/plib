@@ -1,6 +1,6 @@
-diff -urN aaa/plib-1.7.0/configure.in plib-1.7.0/configure.in
---- aaa/plib-1.7.0/configure.in	2002-09-02 20:52:41.000000000 +0200
-+++ plib-1.7.0/configure.in	2003-11-11 00:11:59.000000000 +0100
+diff -urN aa/plib-1.8.0/configure.in plib-1.8.0/configure.in
+--- aa/plib-1.8.0/configure.in	2004-03-20 05:11:02.000000000 +0100
++++ plib-1.8.0/configure.in	2004-03-21 16:34:26.844467584 +0100
 @@ -26,7 +26,7 @@
  AC_PROG_CXX
  AC_PROG_CXXCPP
@@ -8,11 +8,11 @@ diff -urN aaa/plib-1.7.0/configure.in plib-1.7.0/configure.in
 -AC_PROG_RANLIB
 +AC_PROG_LIBTOOL
  
- 
  dnl Command line arguments
-diff -urN aaa/plib-1.7.0/src/fnt/Makefile.am plib-1.7.0/src/fnt/Makefile.am
---- aaa/plib-1.7.0/src/fnt/Makefile.am	2002-09-01 00:21:20.000000000 +0200
-+++ plib-1.7.0/src/fnt/Makefile.am	2003-11-11 00:03:49.000000000 +0100
+ 
+diff -urN aa/plib-1.8.0/src/fnt/Makefile.am plib-1.8.0/src/fnt/Makefile.am
+--- aa/plib-1.8.0/src/fnt/Makefile.am	2004-02-16 04:13:22.000000000 +0100
++++ plib-1.8.0/src/fnt/Makefile.am	2004-03-21 16:36:57.128620920 +0100
 @@ -1,10 +1,10 @@
  if BUILD_FNT
  
@@ -21,14 +21,14 @@ diff -urN aaa/plib-1.7.0/src/fnt/Makefile.am plib-1.7.0/src/fnt/Makefile.am
  
  include_HEADERS = fnt.h
  
--libplibfnt_a_SOURCES = fnt.cxx fntTXF.cxx fntLocal.h
-+libplibfnt_la_SOURCES = fnt.cxx fntTXF.cxx fntLocal.h
+-libplibfnt_a_SOURCES = fnt.cxx fntTXF.cxx fntLocal.h fntBitmap.cxx
++libplibfnt_la_SOURCES = fnt.cxx fntTXF.cxx fntLocal.h fntBitmap.cxx
  
  INCLUDES = -I$(top_srcdir)/src/sg -I$(top_srcdir)/src/util
  
-diff -urN aaa/plib-1.7.0/src/js/Makefile.am plib-1.7.0/src/js/Makefile.am
---- aaa/plib-1.7.0/src/js/Makefile.am	2002-09-01 02:29:28.000000000 +0200
-+++ plib-1.7.0/src/js/Makefile.am	2003-11-11 00:03:59.000000000 +0100
+diff -urN aa/plib-1.8.0/src/js/Makefile.am plib-1.8.0/src/js/Makefile.am
+--- aa/plib-1.8.0/src/js/Makefile.am	2003-01-04 03:28:23.000000000 +0100
++++ plib-1.8.0/src/js/Makefile.am	2004-03-21 16:36:26.862222112 +0100
 @@ -1,10 +1,10 @@
  if BUILD_JS
  
@@ -37,14 +37,14 @@ diff -urN aaa/plib-1.7.0/src/js/Makefile.am plib-1.7.0/src/js/Makefile.am
  
  include_HEADERS = js.h
  
--libplibjs_a_SOURCES = js.cxx
-+libplibjs_la_SOURCES = js.cxx
+-libplibjs_a_SOURCES = js.cxx jsLinux.cxx jsLinuxOld.cxx jsMacOS.cxx \
++libplibjs_la_SOURCES = js.cxx jsLinux.cxx jsLinuxOld.cxx jsMacOS.cxx \
+                              jsMacOSX.cxx jsWindows.cxx jsBSD.cxx   \
+                              jsNone.cxx
  
- INCLUDES = -I$(top_srcdir)/src/util
- 
-diff -urN aaa/plib-1.7.0/src/net/Makefile.am plib-1.7.0/src/net/Makefile.am
---- aaa/plib-1.7.0/src/net/Makefile.am	2002-09-01 00:21:21.000000000 +0200
-+++ plib-1.7.0/src/net/Makefile.am	2003-11-11 00:04:09.000000000 +0100
+diff -urN aa/plib-1.8.0/src/net/Makefile.am plib-1.8.0/src/net/Makefile.am
+--- aa/plib-1.8.0/src/net/Makefile.am	2002-09-01 00:21:21.000000000 +0200
++++ plib-1.8.0/src/net/Makefile.am	2004-03-21 16:37:07.068109888 +0100
 @@ -1,11 +1,11 @@
  if BUILD_NET
  
@@ -59,25 +59,74 @@ diff -urN aaa/plib-1.7.0/src/net/Makefile.am plib-1.7.0/src/net/Makefile.am
  	netMessage.cxx netMonitor.cxx netSocket.cxx
  
  INCLUDES = -I$(top_srcdir)/src/util
-diff -urN aaa/plib-1.7.0/src/pui/Makefile.am plib-1.7.0/src/pui/Makefile.am
---- aaa/plib-1.7.0/src/pui/Makefile.am	2002-09-01 00:21:21.000000000 +0200
-+++ plib-1.7.0/src/pui/Makefile.am	2003-11-11 00:04:19.000000000 +0100
+diff -urN aa/plib-1.8.0/src/psl/Makefile.am plib-1.8.0/src/psl/Makefile.am
+--- aa/plib-1.8.0/src/psl/Makefile.am	2002-09-11 00:22:37.000000000 +0200
++++ plib-1.8.0/src/psl/Makefile.am	2004-03-21 16:37:17.700493520 +0100
+@@ -1,11 +1,11 @@
+ 
+ if BUILD_PSL
+ 
+-lib_LIBRARIES = libplibpsl.a
++lib_LTLIBRARIES = libplibpsl.la
+ 
+ include_HEADERS = psl.h
+ 
+-libplibpsl_a_SOURCES = psl.cxx pslCodeGen.cxx pslContext.cxx \
++libplibpsl_la_SOURCES = psl.cxx pslCodeGen.cxx pslContext.cxx \
+                        pslCompiler.cxx pslSymbols.cxx pslToken.cxx \
+                        pslExpression.cxx pslProgram.cxx pslDump.cxx \
+                        pslError.cxx pslFileIO.cxx pslCompiler.h \
+diff -urN aa/plib-1.8.0/src/puAux/Makefile.am plib-1.8.0/src/puAux/Makefile.am
+--- aa/plib-1.8.0/src/puAux/Makefile.am	2004-02-28 02:03:53.000000000 +0100
++++ plib-1.8.0/src/puAux/Makefile.am	2004-03-21 16:37:59.182187344 +0100
+@@ -1,10 +1,10 @@
+ if BUILD_PUAUX
+ 
+-lib_LIBRARIES = libplibpuaux.a
++lib_LTLIBRARIES = libplibpuaux.la
+ 
+ include_HEADERS = puAux.h
+ 
+-libplibpuaux_a_SOURCES = puAux.cxx                  \
++libplibpuaux_la_SOURCES = puAux.cxx                  \
+                          puAuxBiSlider.cxx          \
+                          puAuxBiSliderWithEnds.cxx  \
+                          puAuxComboBox.cxx          \
+diff -urN aa/plib-1.8.0/src/pui/Makefile.am plib-1.8.0/src/pui/Makefile.am
+--- aa/plib-1.8.0/src/pui/Makefile.am	2004-02-17 02:39:59.000000000 +0100
++++ plib-1.8.0/src/pui/Makefile.am	2004-03-21 16:37:28.971780024 +0100
 @@ -1,10 +1,10 @@
  if BUILD_PUI
  
 -lib_LIBRARIES = libplibpu.a
 +lib_LTLIBRARIES = libplibpu.la
  
- include_HEADERS = pu.h
+ include_HEADERS = pu.h puGLUT.h puFLTK.h puSDL.h puNative.h puPW.h
  
 -libplibpu_a_SOURCES = \
 +libplibpu_la_SOURCES = \
          pu.cxx            puBox.cxx       puButton.cxx puButtonBox.cxx    \
          puArrowButton.cxx puDialogBox.cxx puFrame.cxx  puGroup.cxx        \
          puInput.cxx       puInterface.cxx puLocal.h    puMenuBar.cxx      \
-diff -urN aaa/plib-1.7.0/src/sg/Makefile.am plib-1.7.0/src/sg/Makefile.am
---- aaa/plib-1.7.0/src/sg/Makefile.am	2002-09-01 00:21:21.000000000 +0200
-+++ plib-1.7.0/src/sg/Makefile.am	2003-11-11 00:04:32.000000000 +0100
+diff -urN aa/plib-1.8.0/src/pw/Makefile.am plib-1.8.0/src/pw/Makefile.am
+--- aa/plib-1.8.0/src/pw/Makefile.am	2004-02-15 21:29:34.000000000 +0100
++++ plib-1.8.0/src/pw/Makefile.am	2004-03-21 16:36:36.003832376 +0100
+@@ -1,10 +1,10 @@
+ if BUILD_PW
+ 
+-lib_LIBRARIES = libplibpw.a
++lib_LTLIBRARIES = libplibpw.la
+ 
+ include_HEADERS = pw.h
+ 
+-libplibpw_a_SOURCES = pw.cxx pwX11.cxx pwWindows.cxx pwMacOSX.cxx
++libplibpw_la_SOURCES = pw.cxx pwX11.cxx pwWindows.cxx pwMacOSX.cxx
+ 
+ INCLUDES = -I$(top_srcdir)/src/util
+ 
+diff -urN aa/plib-1.8.0/src/sg/Makefile.am plib-1.8.0/src/sg/Makefile.am
+--- aa/plib-1.8.0/src/sg/Makefile.am	2002-09-01 00:21:21.000000000 +0200
++++ plib-1.8.0/src/sg/Makefile.am	2004-03-21 16:36:40.052216928 +0100
 @@ -1,10 +1,10 @@
  if BUILD_SG
  
@@ -91,9 +140,9 @@ diff -urN aaa/plib-1.7.0/src/sg/Makefile.am plib-1.7.0/src/sg/Makefile.am
                        sgIsect.cxx sgdIsect.cxx \
                        sgPerlinNoise.cxx
  
-diff -urN aaa/plib-1.7.0/src/sl/Makefile.am plib-1.7.0/src/sl/Makefile.am
---- aaa/plib-1.7.0/src/sl/Makefile.am	2002-09-01 00:34:05.000000000 +0200
-+++ plib-1.7.0/src/sl/Makefile.am	2003-11-11 00:04:46.000000000 +0100
+diff -urN aa/plib-1.8.0/src/sl/Makefile.am plib-1.8.0/src/sl/Makefile.am
+--- aa/plib-1.8.0/src/sl/Makefile.am	2002-09-01 00:34:05.000000000 +0200
++++ plib-1.8.0/src/sl/Makefile.am	2004-03-21 16:36:21.039107360 +0100
 @@ -1,16 +1,16 @@
  if BUILD_SL
  
@@ -114,25 +163,25 @@ diff -urN aaa/plib-1.7.0/src/sl/Makefile.am plib-1.7.0/src/sl/Makefile.am
  
  INCLUDES = -I$(top_srcdir)/src/util
  
-diff -urN aaa/plib-1.7.0/src/ssg/Makefile.am plib-1.7.0/src/ssg/Makefile.am
---- aaa/plib-1.7.0/src/ssg/Makefile.am	2002-09-01 00:36:07.000000000 +0200
-+++ plib-1.7.0/src/ssg/Makefile.am	2003-11-11 00:05:08.000000000 +0100
+diff -urN aa/plib-1.8.0/src/ssg/Makefile.am plib-1.8.0/src/ssg/Makefile.am
+--- aa/plib-1.8.0/src/ssg/Makefile.am	2004-01-22 00:54:27.000000000 +0100
++++ plib-1.8.0/src/ssg/Makefile.am	2004-03-21 16:37:38.642309880 +0100
 @@ -1,10 +1,10 @@
  if BUILD_SSG
  
 -lib_LIBRARIES = libplibssg.a
 +lib_LTLIBRARIES = libplibssg.la
  
- include_HEADERS = ssg.h ssgconf.h ssgMSFSPalette.h ssgKeyFlier.h
+ include_HEADERS = ssg.h ssgconf.h ssgMSFSPalette.h ssgKeyFlier.h pcx.h
  
 -libplibssg_a_SOURCES = ssg.cxx ssgAnimation.cxx ssgBase.cxx \
 +libplibssg_la_SOURCES = ssg.cxx ssgAnimation.cxx ssgBase.cxx \
  	ssgBaseTransform.cxx ssgBranch.cxx ssgContext.cxx ssgCutout.cxx \
  	ssgDList.cxx ssgEntity.cxx ssgIsect.cxx ssgLeaf.cxx ssgList.cxx \
- 	ssgLoadAC.cxx ssgLocal.h ssgOptimiser.cxx ssgRoot.cxx ssgSaveAC.cxx \
-diff -urN aaa/plib-1.7.0/src/ssgAux/Makefile.am plib-1.7.0/src/ssgAux/Makefile.am
---- aaa/plib-1.7.0/src/ssgAux/Makefile.am	2002-09-01 00:21:21.000000000 +0200
-+++ plib-1.7.0/src/ssgAux/Makefile.am	2003-11-11 00:04:57.000000000 +0100
+ 	ssgLoadDOF.cxx ssgLoadAC.cxx \
+diff -urN aa/plib-1.8.0/src/ssgAux/Makefile.am plib-1.8.0/src/ssgAux/Makefile.am
+--- aa/plib-1.8.0/src/ssgAux/Makefile.am	2004-01-22 00:42:01.000000000 +0100
++++ plib-1.8.0/src/ssgAux/Makefile.am	2004-03-21 16:38:12.777120600 +0100
 @@ -1,6 +1,6 @@
  if BUILD_SSGAUX
  
@@ -141,18 +190,18 @@ diff -urN aaa/plib-1.7.0/src/ssgAux/Makefile.am plib-1.7.0/src/ssgAux/Makefile.a
  
  include_HEADERS = ssgAux.h             \
                    ssgaShapes.h         \
-@@ -9,7 +9,7 @@
-                   ssgaWaveSystem.h     \
-                   ssgaFire.h
+@@ -13,7 +13,7 @@
+                   ssgaFire.h           \
+                   ssgaBillboards.h
  
 -libplibssgaux_a_SOURCES = ssgAux.cxx               \
 +libplibssgaux_la_SOURCES = ssgAux.cxx               \
                            ssgaShapes.cxx           \
                            ssgaPatch.cxx            \
                            ssgaParticleSystem.cxx   \
-diff -urN aaa/plib-1.7.0/src/util/Makefile.am plib-1.7.0/src/util/Makefile.am
---- aaa/plib-1.7.0/src/util/Makefile.am	2002-09-01 10:57:34.000000000 +0200
-+++ plib-1.7.0/src/util/Makefile.am	2003-11-11 00:05:20.000000000 +0100
+diff -urN aa/plib-1.8.0/src/util/Makefile.am plib-1.8.0/src/util/Makefile.am
+--- aa/plib-1.8.0/src/util/Makefile.am	2002-09-01 10:57:34.000000000 +0200
++++ plib-1.8.0/src/util/Makefile.am	2004-03-21 16:37:47.845910720 +0100
 @@ -1,10 +1,10 @@
  if BUILD_UL
  
