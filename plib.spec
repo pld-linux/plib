@@ -10,8 +10,10 @@ Patch:		plib_configure.in_ssgAux_add.patch
 BuildRequires:	XFree86-devel >= 4.0.1
 BuildRequires:	OpenGL-devel
 BuildRequires:	glut-devel >= 3.7
+Requires:	OpenGL
 Buildroot:	/tmp/%{name}-%{version}-root
 
+%define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 %define	_prefix	/usr/X11R6
 
 %description
