@@ -37,8 +37,8 @@ Przenaszalna Biblioteka do programowania Gier.
 %build
 rm -f config.cache missing
 aclocal
-autoconf
-automake -a -c -f
+%{__autoconf}
+%{__automake}
 %configure \
 	--with-GL=%{_prefix}
 
