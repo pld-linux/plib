@@ -60,5 +60,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(644,root,root) %{_includedir}/plib
-%attr(644,root,root) %{_libdir}/lib*.a
+%{_includedir}/plib
+%{_libdir}/lib*.a
