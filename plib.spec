@@ -1,5 +1,5 @@
-Summary:	Portable Game Library.
-Summary(pl):	Przenaszalna Biblioteka do programowania Gier.
+Summary:	Portable Game Library
+Summary(pl):	Przenaszalna Biblioteka do programowania Gier
 Name:		plib
 Version:	1.3.1
 Release:	1
@@ -14,9 +14,9 @@ Patch1:		%{name}-flt-max.patch
 URL:		http://plib.sourceforge.net/
 BuildRequires:	XFree86-devel >= 4.0.1
 BuildRequires:	OpenGL-devel
-BuildRequires:	glut-devel >= 3.7
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	glut-devel >= 3.7
 BuildRequires:	libstdc++-devel
 Requires:	OpenGL
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -45,7 +45,7 @@ automake -a -c
 %configure \
 	--with-gl=%{_prefix}
 
-%{__make} RPM_OPT_FLAGS="$RPM_OPT_FLAGS" 
+%{__make}
 
 gzip -9nf AUTHORS README* NOTICE NEWS ChangeLog CHANGES
 
