@@ -1,0 +1,11 @@
+diff -urN plib-1.3.1.org/src/sg/sg.h plib-1.3.1/src/sg/sg.h
+--- plib-1.3.1.org/src/sg/sg.h	Fri Apr 20 17:42:45 2001
++++ plib-1.3.1/src/sg/sg.h	Fri Apr 20 17:54:11 2001
+@@ -2,6 +2,7 @@
+ #ifndef SG_H
+ #define SG_H  1
+ 
++#include <values.h>
+ #include "ul.h"
+ 
+ #define sgFloat float
