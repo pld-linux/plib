@@ -7,7 +7,12 @@ License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
 Group(es):	X11/Bibliotecas
+Group(fr):	X11/Librairies
 Group(pl):	X11/Biblioteki
+Group(pt_BR):	X11/Bibliotecas
+Group(pt):	X11/Bibliotecas
+Group(ru):	X11/Библиотеки
+Group(uk):	X11/Б╕бл╕отеки
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-am_fix.patch
