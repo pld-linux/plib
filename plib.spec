@@ -2,16 +2,16 @@ Summary:	Portable Game Library
 Summary(pl):	Przenaszalna Biblioteka do programowania Gier
 Name:		plib
 Version:	1.7.0
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	30881640e37bf650e203e10a23f879c7
 URL:		http://plib.sourceforge.net/
-BuildRequires:	XFree86-devel >= 4.0.1
 BuildRequires:	OpenGL-devel
-BuildRequires:	automake
+BuildRequires:	XFree86-devel >= 4.0.1
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	glut-devel >= 3.7
 BuildRequires:	libstdc++-devel
 Requires:	OpenGL
@@ -24,6 +24,19 @@ Portable Game Library.
 
 %description -l pl
 Przenaszalna Biblioteka do programowania Gier.
+
+%package devel
+Summary:	Header files for plib library
+Summary(pl):	Pliki nag³ówkowe biblioteki plib
+Group:		Development/Libraries
+Requires:	%{name} = %{version}
+Requires:	OpenGL-devel-base
+
+%description devel
+Header files for plib library.
+
+%description devel -l pl
+Pliki nag³ówkowe biblioteki plib.
 
 %prep
 %setup -q
@@ -41,7 +54,8 @@ rm -f config.cache missing
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -49,5 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README* NOTICE NEWS ChangeLog
-%{_includedir}/plib
 %{_libdir}/lib*.a
+
+%files devel
+%defattr(644,root,root,755)
+%{_includedir}/%{name}
