@@ -15,7 +15,7 @@ BuildRequires:	automake
 BuildRequires:	glut-devel >= 3.7
 BuildRequires:	libstdc++-devel
 Requires:	OpenGL
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 
