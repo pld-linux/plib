@@ -40,7 +40,6 @@ rm -f config.cache missing
 
 %{__make}
 
-gzip -9nf AUTHORS README* NOTICE NEWS ChangeLog
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -52,6 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS README* NOTICE NEWS ChangeLog
 %{_includedir}/plib
 %{_libdir}/lib*.a
