@@ -1,0 +1,168 @@
+diff -urN aaa/plib-1.7.0/configure.in plib-1.7.0/configure.in
+--- aaa/plib-1.7.0/configure.in	2002-09-02 20:52:41.000000000 +0200
++++ plib-1.7.0/configure.in	2003-11-11 00:11:59.000000000 +0100
+@@ -26,7 +26,7 @@
+ AC_PROG_CXX
+ AC_PROG_CXXCPP
+ AC_PROG_INSTALL
+-AC_PROG_RANLIB
++AC_PROG_LIBTOOL
+ 
+ 
+ dnl Command line arguments
+diff -urN aaa/plib-1.7.0/src/fnt/Makefile.am plib-1.7.0/src/fnt/Makefile.am
+--- aaa/plib-1.7.0/src/fnt/Makefile.am	2002-09-01 00:21:20.000000000 +0200
++++ plib-1.7.0/src/fnt/Makefile.am	2003-11-11 00:03:49.000000000 +0100
+@@ -1,10 +1,10 @@
+ if BUILD_FNT
+ 
+-lib_LIBRARIES = libplibfnt.a
++lib_LTLIBRARIES = libplibfnt.la
+ 
+ include_HEADERS = fnt.h
+ 
+-libplibfnt_a_SOURCES = fnt.cxx fntTXF.cxx fntLocal.h
++libplibfnt_la_SOURCES = fnt.cxx fntTXF.cxx fntLocal.h
+ 
+ INCLUDES = -I$(top_srcdir)/src/sg -I$(top_srcdir)/src/util
+ 
+diff -urN aaa/plib-1.7.0/src/js/Makefile.am plib-1.7.0/src/js/Makefile.am
+--- aaa/plib-1.7.0/src/js/Makefile.am	2002-09-01 02:29:28.000000000 +0200
++++ plib-1.7.0/src/js/Makefile.am	2003-11-11 00:03:59.000000000 +0100
+@@ -1,10 +1,10 @@
+ if BUILD_JS
+ 
+-lib_LIBRARIES = libplibjs.a
++lib_LTLIBRARIES = libplibjs.la
+ 
+ include_HEADERS = js.h
+ 
+-libplibjs_a_SOURCES = js.cxx
++libplibjs_la_SOURCES = js.cxx
+ 
+ INCLUDES = -I$(top_srcdir)/src/util
+ 
+diff -urN aaa/plib-1.7.0/src/net/Makefile.am plib-1.7.0/src/net/Makefile.am
+--- aaa/plib-1.7.0/src/net/Makefile.am	2002-09-01 00:21:21.000000000 +0200
++++ plib-1.7.0/src/net/Makefile.am	2003-11-11 00:04:09.000000000 +0100
+@@ -1,11 +1,11 @@
+ if BUILD_NET
+ 
+-lib_LIBRARIES = libplibnet.a
++lib_LTLIBRARIES = libplibnet.la
+ 
+ include_HEADERS = netBuffer.h netChannel.h netChat.h netMessage.h \
+ 	netMonitor.h netSocket.h
+ 
+-libplibnet_a_SOURCES = netBuffer.cxx netChannel.cxx netChat.cxx \
++libplibnet_la_SOURCES = netBuffer.cxx netChannel.cxx netChat.cxx \
+ 	netMessage.cxx netMonitor.cxx netSocket.cxx
+ 
+ INCLUDES = -I$(top_srcdir)/src/util
+diff -urN aaa/plib-1.7.0/src/pui/Makefile.am plib-1.7.0/src/pui/Makefile.am
+--- aaa/plib-1.7.0/src/pui/Makefile.am	2002-09-01 00:21:21.000000000 +0200
++++ plib-1.7.0/src/pui/Makefile.am	2003-11-11 00:04:19.000000000 +0100
+@@ -1,10 +1,10 @@
+ if BUILD_PUI
+ 
+-lib_LIBRARIES = libplibpu.a
++lib_LTLIBRARIES = libplibpu.la
+ 
+ include_HEADERS = pu.h
+ 
+-libplibpu_a_SOURCES = \
++libplibpu_la_SOURCES = \
+         pu.cxx            puBox.cxx       puButton.cxx puButtonBox.cxx    \
+         puArrowButton.cxx puDialogBox.cxx puFrame.cxx  puGroup.cxx        \
+         puInput.cxx       puInterface.cxx puLocal.h    puMenuBar.cxx      \
+diff -urN aaa/plib-1.7.0/src/sg/Makefile.am plib-1.7.0/src/sg/Makefile.am
+--- aaa/plib-1.7.0/src/sg/Makefile.am	2002-09-01 00:21:21.000000000 +0200
++++ plib-1.7.0/src/sg/Makefile.am	2003-11-11 00:04:32.000000000 +0100
+@@ -1,10 +1,10 @@
+ if BUILD_SG
+ 
+-lib_LIBRARIES = libplibsg.a
++lib_LTLIBRARIES = libplibsg.la
+ 
+ include_HEADERS = sg.h
+ 
+-libplibsg_a_SOURCES = sg.cxx sgd.cxx \
++libplibsg_la_SOURCES = sg.cxx sgd.cxx \
+                       sgIsect.cxx sgdIsect.cxx \
+                       sgPerlinNoise.cxx
+ 
+diff -urN aaa/plib-1.7.0/src/sl/Makefile.am plib-1.7.0/src/sl/Makefile.am
+--- aaa/plib-1.7.0/src/sl/Makefile.am	2002-09-01 00:34:05.000000000 +0200
++++ plib-1.7.0/src/sl/Makefile.am	2003-11-11 00:04:46.000000000 +0100
+@@ -1,16 +1,16 @@
+ if BUILD_SL
+ 
+-lib_LIBRARIES = libplibsl.a libplibsm.a
++lib_LTLIBRARIES = libplibsl.la libplibsm.la
+ 
+ include_HEADERS = sl.h slPortability.h sm.h
+ 
+-libplibsl_a_SOURCES = \
++libplibsl_la_SOURCES = \
+ 	slDSP.cxx slSample.cxx slEnvelope.cxx \
+ 	slPlayer.cxx slMODPlayer.cxx slSamplePlayer.cxx \
+         slScheduler.cxx slMODdacio.cxx slMODfile.cxx \
+         slMODinst.cxx slMODnote.cxx slMODPrivate.h slMODfile.h
+ 
+-libplibsm_a_SOURCES = slPortability.h smMixer.cxx
++libplibsm_la_SOURCES = slPortability.h smMixer.cxx
+ 
+ INCLUDES = -I$(top_srcdir)/src/util
+ 
+diff -urN aaa/plib-1.7.0/src/ssg/Makefile.am plib-1.7.0/src/ssg/Makefile.am
+--- aaa/plib-1.7.0/src/ssg/Makefile.am	2002-09-01 00:36:07.000000000 +0200
++++ plib-1.7.0/src/ssg/Makefile.am	2003-11-11 00:05:08.000000000 +0100
+@@ -1,10 +1,10 @@
+ if BUILD_SSG
+ 
+-lib_LIBRARIES = libplibssg.a
++lib_LTLIBRARIES = libplibssg.la
+ 
+ include_HEADERS = ssg.h ssgconf.h ssgMSFSPalette.h ssgKeyFlier.h
+ 
+-libplibssg_a_SOURCES = ssg.cxx ssgAnimation.cxx ssgBase.cxx \
++libplibssg_la_SOURCES = ssg.cxx ssgAnimation.cxx ssgBase.cxx \
+ 	ssgBaseTransform.cxx ssgBranch.cxx ssgContext.cxx ssgCutout.cxx \
+ 	ssgDList.cxx ssgEntity.cxx ssgIsect.cxx ssgLeaf.cxx ssgList.cxx \
+ 	ssgLoadAC.cxx ssgLocal.h ssgOptimiser.cxx ssgRoot.cxx ssgSaveAC.cxx \
+diff -urN aaa/plib-1.7.0/src/ssgAux/Makefile.am plib-1.7.0/src/ssgAux/Makefile.am
+--- aaa/plib-1.7.0/src/ssgAux/Makefile.am	2002-09-01 00:21:21.000000000 +0200
++++ plib-1.7.0/src/ssgAux/Makefile.am	2003-11-11 00:04:57.000000000 +0100
+@@ -1,6 +1,6 @@
+ if BUILD_SSGAUX
+ 
+-lib_LIBRARIES = libplibssgaux.a
++lib_LTLIBRARIES = libplibssgaux.la
+ 
+ include_HEADERS = ssgAux.h             \
+                   ssgaShapes.h         \
+@@ -9,7 +9,7 @@
+                   ssgaWaveSystem.h     \
+                   ssgaFire.h
+ 
+-libplibssgaux_a_SOURCES = ssgAux.cxx               \
++libplibssgaux_la_SOURCES = ssgAux.cxx               \
+                           ssgaShapes.cxx           \
+                           ssgaPatch.cxx            \
+                           ssgaParticleSystem.cxx   \
+diff -urN aaa/plib-1.7.0/src/util/Makefile.am plib-1.7.0/src/util/Makefile.am
+--- aaa/plib-1.7.0/src/util/Makefile.am	2002-09-01 10:57:34.000000000 +0200
++++ plib-1.7.0/src/util/Makefile.am	2003-11-11 00:05:20.000000000 +0100
+@@ -1,10 +1,10 @@
+ if BUILD_UL
+ 
+-lib_LIBRARIES = libplibul.a
++lib_LTLIBRARIES = libplibul.la
+ 
+ include_HEADERS = ul.h ulRTTI.h
+ 
+-libplibul_a_SOURCES = ul.cxx ulClock.cxx ulError.cxx ulLinkedList.cxx \
++libplibul_la_SOURCES = ul.cxx ulClock.cxx ulError.cxx ulLinkedList.cxx \
+         ulList.cxx ulLocal.h ulRTTI.cxx
+ 
+ endif
