@@ -52,7 +52,7 @@ diff -urN aa/plib-1.8.0/src/net/Makefile.am plib-1.8.0/src/net/Makefile.am
 +lib_LTLIBRARIES = libplibnet.la
  
  include_HEADERS = netBuffer.h netChannel.h netChat.h netMessage.h \
- 	netMonitor.h netSocket.h
+ 	netMonitor.h netSocket.h net.h
  
 -libplibnet_a_SOURCES = netBuffer.cxx netChannel.cxx netChat.cxx \
 +libplibnet_la_SOURCES = netBuffer.cxx netChannel.cxx netChat.cxx \
@@ -85,7 +85,7 @@ diff -urN aa/plib-1.8.0/src/puAux/Makefile.am plib-1.8.0/src/puAux/Makefile.am
 -lib_LIBRARIES = libplibpuaux.a
 +lib_LTLIBRARIES = libplibpuaux.la
  
- include_HEADERS = puAux.h
+ include_HEADERS = puAux.h puAuxLocal.h
  
 -libplibpuaux_a_SOURCES = puAux.cxx                  \
 +libplibpuaux_la_SOURCES = puAux.cxx                  \
