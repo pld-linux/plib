@@ -1,7 +1,7 @@
 Summary:	Portable Game Library
 Summary(pl):	Przenaszalna Biblioteka do programowania Gier
 Name:		plib
-Version:	1.3.1
+Version:	1.4.2
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
@@ -34,8 +34,8 @@ Przenaszalna Biblioteka do programowania Gier.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+#%patch0 -p1
+#%patch1 -p1
 
 %build
 rm -f config.cache missing
@@ -43,7 +43,7 @@ aclocal
 autoconf
 automake -a -c
 %configure \
-	--with-gl=%{_prefix}
+	--with-GL=%{_prefix}
 
 %{__make}
 
