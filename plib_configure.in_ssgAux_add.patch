@@ -1,0 +1,9 @@
+--- configure.in.org	Mon Oct  2 14:35:38 2000
++++ configure.in	Mon Oct  2 14:35:59 2000
+@@ -165,5 +165,6 @@
+ 	src/sg/Makefile \
+ 	src/sl/Makefile \
+ 	src/ssg/Makefile \
++	src/ssgAux/Makefile \
+ 	src/fnt/Makefile )
+ 
