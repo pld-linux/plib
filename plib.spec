@@ -32,7 +32,7 @@ Przenaszalna Biblioteka do programowania Gier.
 
 %build
 rm -f config.cache missing
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
