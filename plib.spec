@@ -2,7 +2,7 @@ Summary:	Portable Game Library
 Summary(pl):	Przenaszalna Biblioteka do programowania Gier
 Name:		plib
 Version:	1.4.2
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Group(de):	X11/Libraries
@@ -10,6 +10,7 @@ Group(es):	X11/Bibliotecas
 Group(pl):	X11/Biblioteki
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
 Patch0:		%{name}-make.patch
+Patch1:		%{name}-am_fix.patch
 URL:		http://plib.sourceforge.net/
 BuildRequires:	XFree86-devel >= 4.0.1
 BuildRequires:	OpenGL-devel
@@ -34,6 +35,7 @@ Przenaszalna Biblioteka do programowania Gier.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f config.cache missing
