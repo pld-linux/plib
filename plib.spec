@@ -2,7 +2,7 @@ Summary:	Portable Game Library
 Summary(pl):	Przenaszalna Biblioteka do programowania Gier
 Name:		plib
 Version:	1.4.2
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
@@ -38,7 +38,7 @@ Przenaszalna Biblioteka do programowania Gier.
 rm -f config.cache missing
 aclocal
 autoconf
-automake -a -c -f
+automake -a -c -f ||
 %configure \
 	--with-GL=%{_prefix}
 
