@@ -10,7 +10,6 @@ Group(es):	X11/Bibliotecas
 Group(pl):	X11/Biblioteki
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
 Patch0:		%{name}-make.patch
-Patch1:		%{name}-flt-max.patch
 URL:		http://plib.sourceforge.net/
 BuildRequires:	XFree86-devel >= 4.0.1
 BuildRequires:	OpenGL-devel
@@ -34,8 +33,7 @@ Przenaszalna Biblioteka do programowania Gier.
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
+%patch0 -p1
 
 %build
 rm -f config.cache missing
