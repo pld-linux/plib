@@ -1,5 +1,5 @@
-Summary:	Portable Game Library
-Summary(pl):	Przenaszalna Biblioteka do programowania Gier
+Summary:	Portable game library
+Summary(pl):	Przeno¶na biblioteka do programowania gier
 Name:		plib
 Version:	1.7.0
 Release:	3
@@ -20,10 +20,10 @@ Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 
 %description
-Portable Game Library.
+Portable game library.
 
 %description -l pl
-Przenaszalna Biblioteka do programowania Gier.
+Przeno¶na biblioteka do programowania gier.
 
 %package devel
 Summary:	Header files for plib library
