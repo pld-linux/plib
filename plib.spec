@@ -6,6 +6,7 @@ Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
+# Source0-md5:	30881640e37bf650e203e10a23f879c7
 URL:		http://plib.sourceforge.net/
 BuildRequires:	XFree86-devel >= 4.0.1
 BuildRequires:	OpenGL-devel
