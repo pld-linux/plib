@@ -2,7 +2,7 @@ Summary:	Portable Game Library
 Summary(pl):	Przenaszalna Biblioteka do programowania Gier
 Name:		plib
 Version:	1.7.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
@@ -17,7 +17,6 @@ Requires:	OpenGL
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
-
 
 %description
 Portable Game Library.
@@ -34,10 +33,9 @@ rm -f config.cache missing
 %{__autoconf}
 %{__automake}
 %configure \
-	--with-GL=%{_prefix}
+	--with-GL=/usr/X11R6
 
 %{__make}
-
 
 %install
 rm -rf $RPM_BUILD_ROOT
