@@ -9,13 +9,15 @@ Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	5e3f289a9d1c5de0b1cfdec76bf139e6
 Patch0:		%{name}-shared.patch
 Patch1:		%{name}-js_fix.patch
+Patch2:		%{name}-gcc4.patch
 URL:		http://plib.sourceforge.net/
 BuildRequires:	OpenGL-devel
-BuildRequires:	XFree86-devel >= 4.0.1
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool
+BuildRequires:	xorg-lib-libXi-devel
+BuildRequires:	xorg-lib-libXmu-devel
 Requires:	OpenGL
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,7 +34,10 @@ Summary:	Header files for plib library
 Summary(pl):	Pliki nag³ówkowe biblioteki plib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	OpenGL-devel-base
+Requires:	OpenGL-devel
+Requires:	libstdc++-devel
+Requires:	xorg-lib-libXi-devel
+Requires:	xorg-lib-libXmu-devel
 
 %description devel
 Header files for plib library.
@@ -56,6 +61,7 @@ Statyczne biblioteki plib.
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm -f config.cache missing
@@ -63,9 +69,7 @@ rm -f config.cache missing
 %{__aclocal}
 %{__autoconf}
 %{__automake}
-%configure \
-	--with-GL=/usr/X11R6
-
+%configure
 %{__make}
 
 %install
