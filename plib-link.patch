@@ -1,0 +1,12 @@
+diff -urN plib-1.8.4/src/ssg/Makefile.am plib-1.8.4.new/src/ssg/Makefile.am
+--- plib-1.8.4/src/ssg/Makefile.am	2004-10-30 00:46:25.000000000 +0200
++++ plib-1.8.4.new/src/ssg/Makefile.am	2006-11-05 14:16:18.000000000 +0100
+@@ -29,6 +29,8 @@
+ 	ssgSaveIV.cxx ssgAnimTransform.cxx\
+ 	ssgVertSplitter.h ssgVertSplitter.cxx ssgStatistics.cxx
+ 
++libplibssg_la_LIBADD = ../sg/libplibsg.la
++
+ INCLUDES = -I$(top_srcdir)/src/sg -I$(top_srcdir)/src/util
+ 
+ endif
