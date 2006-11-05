@@ -2,7 +2,7 @@ Summary:	Portable game library
 Summary(pl):	Przeno¶na biblioteka do programowania gier
 Name:		plib
 Version:	1.8.4
-Release:	1
+Release:	2
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
@@ -10,6 +10,7 @@ Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
 Patch0:		%{name}-shared.patch
 Patch1:		%{name}-js_fix.patch
 Patch2:		%{name}-gcc4.patch
+Patch3:		%{name}-link.patch
 URL:		http://plib.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	autoconf
@@ -62,6 +63,7 @@ Statyczne biblioteki plib.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 rm -f config.cache missing
