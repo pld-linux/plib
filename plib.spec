@@ -1,5 +1,5 @@
 Summary:	Portable game library
-Summary(pl):	Przeno∂na biblioteka do programowania gier
+Summary(pl.UTF-8):   Przeno≈õna biblioteka do programowania gier
 Name:		plib
 Version:	1.8.4
 Release:	2
@@ -27,12 +27,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Portable game library.
 
-%description -l pl
-Przeno∂na biblioteka do programowania gier.
+%description -l pl.UTF-8
+Przeno≈õna biblioteka do programowania gier.
 
 %package devel
 Summary:	Header files for plib library
-Summary(pl):	Pliki nag≥Ûwkowe biblioteki plib
+Summary(pl.UTF-8):   Pliki nag≈Ç√≥wkowe biblioteki plib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
@@ -43,19 +43,19 @@ Requires:	xorg-lib-libXmu-devel
 %description devel
 Header files for plib library.
 
-%description devel -l pl
-Pliki nag≥Ûwkowe biblioteki plib.
+%description devel -l pl.UTF-8
+Pliki nag≈Ç√≥wkowe biblioteki plib.
 
 %package static
 Summary:	Static plib libraries
-Summary(pl):	Statyczne biblioteki plib
+Summary(pl.UTF-8):   Statyczne biblioteki plib
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static plib libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczne biblioteki plib.
 
 %prep
