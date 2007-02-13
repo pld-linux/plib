@@ -1,5 +1,5 @@
 Summary:	Portable game library
-Summary(pl.UTF-8):   Przenośna biblioteka do programowania gier
+Summary(pl.UTF-8):	Przenośna biblioteka do programowania gier
 Name:		plib
 Version:	1.8.4
 Release:	2
@@ -32,7 +32,7 @@ Przenośna biblioteka do programowania gier.
 
 %package devel
 Summary:	Header files for plib library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki plib
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki plib
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	OpenGL-devel
@@ -48,7 +48,7 @@ Pliki nagłówkowe biblioteki plib.
 
 %package static
 Summary:	Static plib libraries
-Summary(pl.UTF-8):   Statyczne biblioteki plib
+Summary(pl.UTF-8):	Statyczne biblioteki plib
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
