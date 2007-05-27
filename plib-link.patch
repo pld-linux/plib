@@ -10,3 +10,14 @@ diff -urN plib-1.8.4/src/ssg/Makefile.am plib-1.8.4.new/src/ssg/Makefile.am
  INCLUDES = -I$(top_srcdir)/src/sg -I$(top_srcdir)/src/util
  
  endif
+--- plib-1.8.4/src/net/Makefile.am~	2007-05-27 22:30:14.521956341 +0200
++++ plib-1.8.4/src/net/Makefile.am	2007-05-27 22:32:20.483299305 +0200
+@@ -8,6 +8,8 @@
+ libplibnet_la_SOURCES = netBuffer.cxx netChannel.cxx netChat.cxx \
+ 	netMessage.cxx netMonitor.cxx netSocket.cxx
+ 
++libplibnet_la_LIBADD = ../util/libplibul.la
++
+ INCLUDES = -I$(top_srcdir)/src/util
+ 
+ endif
