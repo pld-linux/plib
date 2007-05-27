@@ -21,3 +21,14 @@ diff -urN plib-1.8.4/src/ssg/Makefile.am plib-1.8.4.new/src/ssg/Makefile.am
  INCLUDES = -I$(top_srcdir)/src/util
  
  endif
+--- plib-1.8.4/src/sg/Makefile.am~	2007-05-28 00:27:32.488252941 +0200
++++ plib-1.8.4/src/sg/Makefile.am	2007-05-28 00:28:41.600169703 +0200
+@@ -8,6 +8,8 @@
+                       sgIsect.cxx sgdIsect.cxx \
+                       sgPerlinNoise.cxx
+ 
++libplibsg_la_LIBADD = ../util/libplibul.la
++
+ INCLUDES = -I$(top_srcdir)/src/util
+ 
+ endif
