@@ -2,7 +2,7 @@ Summary:	Portable game library
 Summary(pl.UTF-8):	Przenośna biblioteka do programowania gier
 Name:		plib
 Version:	1.8.5
-Release:	1
+Release:	2
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
