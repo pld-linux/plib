@@ -32,3 +32,87 @@ diff -urN plib-1.8.4/src/ssg/Makefile.am plib-1.8.4.new/src/ssg/Makefile.am
  INCLUDES = -I$(top_srcdir)/src/util
  
  endif
+--- plib-1.8.5/src/js/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
++++ plib-1.8.5/src/js/Makefile.am	2012-05-22 10:28:34.526067119 +0200
+@@ -8,6 +8,8 @@ libplibjs_la_SOURCES = js.cxx jsLinux.cx
+                              jsMacOSX.cxx jsWindows.cxx jsBSD.cxx   \
+                              jsNone.cxx
+ 
++libplibjs_la_LIBADD = $(top_srcdir)/src/util/libplibul.la
++
+ INCLUDES = -I$(top_srcdir)/src/util
+ 
+ endif
+--- plib-1.8.5/src/sl/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
++++ plib-1.8.5/src/sl/Makefile.am	2012-05-22 10:28:34.526067119 +0200
+@@ -8,6 +8,8 @@
+ 
+ libplibsm_la_SOURCES = slPortability.h smMixer.cxx
+ 
++libplibsl_la_LIBADD = $(top_srcdir)/src/util/libplibul.la
++
+ INCLUDES = -I$(top_srcdir)/src/util
+ 
+ endif
+--- plib-1.8.5/src/fnt/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
++++ plib-1.8.5/src/fnt/Makefile.am	2012-05-22 10:28:34.526067119 +0200
+@@ -8,6 +8,8 @@
+ 
+ libplibfnt_la_SOURCES = fnt.cxx fntTXF.cxx fntLocal.h fntBitmap.cxx
+ 
++libplibfnt_la_LIBADD = $(top_srcdir)/src/util/libplibul.la
++
+ INCLUDES = -I$(top_srcdir)/src/sg -I$(top_srcdir)/src/util
+ 
+ endif
+--- plib-1.8.5/src/pui/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
++++ plib-1.8.5/src/pui/Makefile.am	2012-05-22 10:28:34.526067119 +0200
+@@ -8,6 +8,8 @@
+         puRange.cxx       \
+         puInputBase.cxx
+ 
++libplibpu_la_LIBADD = $(top_srcdir)/src/util/libplibul.la $(top_srcdir)/src/fnt/libplibfnt.la
++
+ AM_CPPFLAGS = -I$(top_srcdir)/src/sg -I$(top_srcdir)/src/fnt
+ AM_CPPFLAGS += -I$(top_srcdir)/src/util
+ 
+--- plib-1.8.5/src/ssgAux/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
++++ plib-1.8.5/src/ssgAux/Makefile.am	2012-05-22 10:28:34.526067119 +0200
+@@ -8,6 +8,8 @@
+                           ssgaTeapot.cxx           \
+                           ssgaBillboards.cxx
+ 
++libplibssgaux_la_LIBADD = $(top_srcdir)/src/util/libplibul.la $(top_srcdir)/src/ssg/libplibssg.la
++
+ INCLUDES = -I$(top_srcdir)/src/sg -I$(top_srcdir)/src/ssg
+ INCLUDES += -I$(top_srcdir)/src/util
+ 
+--- plib-1.8.5/src/puAux/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
++++ plib-1.8.5/src/puAux/Makefile.am	2012-05-22 10:28:34.526067119 +0200
+@@ -8,6 +8,10 @@
+                          puAuxVerticalMenu.cxx      \
+                          puAuxChooser.cxx
+ 
++libplibpuaux_la_LIBADD = $(top_srcdir)/src/util/libplibul.la \
++				$(top_srcdir)/src/pui/libplibpu.la \
++				$(top_srcdir)/src/sg/libplibsg.la
++
+ INCLUDES = -I$(top_srcdir)/src/sg  \
+            -I$(top_srcdir)/src/pui \
+ 
+--- plib-1.8.5/src/psl/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
++++ plib-1.8.5/src/psl/Makefile.am	2012-05-22 10:28:34.526067119 +0200
+@@ -8,6 +8,8 @@
+                        pslContext.h pslFileIO.h pslLocal.h \
+                        pslOpcodes.h pslSymbol.h
+ 
++libplibpsl_la_LIBADD = $(top_srcdir)/src/util/libplibul.la
++
+ INCLUDES = -I$(top_srcdir)/src/util
+ 
+ endif
+--- plib-1.8.5/src/Makefile.am.orig	2012-05-22 14:34:09.188398794 +0200
++++ plib-1.8.5/src/Makefile.am	2012-05-22 14:34:24.288316989 +0200
+@@ -1 +1 @@
+-SUBDIRS = util js sl pui puAux sg ssg fnt ssgAux net psl pw
++SUBDIRS = util js sl fnt pui sg puAux ssg ssgAux net psl pw
