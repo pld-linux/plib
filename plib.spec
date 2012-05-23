@@ -2,7 +2,7 @@ Summary:	Portable game library
 Summary(pl.UTF-8):	Przenośna biblioteka do programowania gier
 Name:		plib
 Version:	1.8.5
-Release:	2
+Release:	3
 License:	LGPL v2+
 Group:		X11/Libraries
 Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
@@ -109,19 +109,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libplibssgaux.so.0
 %attr(755,root,root) %{_libdir}/libplibul.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libplibul.so.0
-%{_libdir}/libplibfnt.so.0
-%{_libdir}/libplibjs.so.0
-%{_libdir}/libplibnet.so.0
-%{_libdir}/libplibpsl.so.0
-%{_libdir}/libplibpu.so.0
-%{_libdir}/libplibpuaux.so.0
-%{_libdir}/libplibpw.so.0
-%{_libdir}/libplibsg.so.0
-%{_libdir}/libplibsl.so.0
-%{_libdir}/libplibsm.so.0
-%{_libdir}/libplibssg.so.0
-%{_libdir}/libplibssgaux.so.0
-%{_libdir}/libplibul.so.0
 
 %files devel
 %defattr(644,root,root,755)
