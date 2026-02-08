@@ -5,11 +5,11 @@ Version:	1.8.5
 Release:	3
 License:	LGPL v2+
 Group:		X11/Libraries
-Source0:	http://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
+Source0:	https://plib.sourceforge.net/dist/%{name}-%{version}.tar.gz
 # Source0-md5:	47a6fbf63668c1eed631024038b2ea90
 Patch0:		%{name}-shared.patch
 Patch1:		%{name}-link.patch
-URL:		http://plib.sourceforge.net/
+URL:		https://plib.sourceforge.net/
 BuildRequires:	OpenGL-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
