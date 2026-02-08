@@ -65,10 +65,10 @@ diff -urN plib-1.8.4/src/ssg/Makefile.am plib-1.8.4.new/src/ssg/Makefile.am
  INCLUDES = -I$(top_srcdir)/src/sg -I$(top_srcdir)/src/util
  
  endif
---- plib-1.8.5/src/pui/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
-+++ plib-1.8.5/src/pui/Makefile.am	2012-05-22 10:28:34.526067119 +0200
-@@ -8,6 +8,8 @@
-         puRange.cxx       \
+--- plib-1.8.5/src/pui/Makefile.am.orig	2026-02-08 07:53:59.769939260 +0100
++++ plib-1.8.5/src/pui/Makefile.am	2026-02-08 07:54:40.149720504 +0100
+@@ -15,6 +15,8 @@ libplibpu_la_SOURCES = \
+         puRange.cxx	  \
          puInputBase.cxx
  
 +libplibpu_la_LIBADD = $(top_srcdir)/src/util/libplibul.la $(top_srcdir)/src/fnt/libplibfnt.la
@@ -87,19 +87,19 @@ diff -urN plib-1.8.4/src/ssg/Makefile.am plib-1.8.4.new/src/ssg/Makefile.am
  INCLUDES = -I$(top_srcdir)/src/sg -I$(top_srcdir)/src/ssg
  INCLUDES += -I$(top_srcdir)/src/util
  
---- plib-1.8.5/src/puAux/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
-+++ plib-1.8.5/src/puAux/Makefile.am	2012-05-22 10:28:34.526067119 +0200
-@@ -8,6 +8,10 @@
+--- plib-1.8.5/src/puAux/Makefile.am.orig	2026-02-08 07:55:30.589447249 +0100
++++ plib-1.8.5/src/puAux/Makefile.am	2026-02-08 07:56:12.015889489 +0100
+@@ -20,6 +20,10 @@ libplibpuaux_la_SOURCES = puAux.cxx
                           puAuxVerticalMenu.cxx      \
                           puAuxChooser.cxx
  
 +libplibpuaux_la_LIBADD = $(top_srcdir)/src/util/libplibul.la \
-+				$(top_srcdir)/src/pui/libplibpu.la \
-+				$(top_srcdir)/src/sg/libplibsg.la
++                         $(top_srcdir)/src/pui/libplibpu.la \
++                         $(top_srcdir)/src/sg/libplibsg.la
 +
  INCLUDES = -I$(top_srcdir)/src/sg  \
             -I$(top_srcdir)/src/pui \
- 
+            -I$(top_srcdir)/src/fnt \
 --- plib-1.8.5/src/psl/Makefile.am.orig	2012-05-22 10:26:49.896633944 +0200
 +++ plib-1.8.5/src/psl/Makefile.am	2012-05-22 10:28:34.526067119 +0200
 @@ -8,6 +8,8 @@
