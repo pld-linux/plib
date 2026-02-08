@@ -83,48 +83,48 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README* NOTICE NEWS ChangeLog
-%attr(755,root,root) %{_libdir}/libplibfnt.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibfnt.so.0
-%attr(755,root,root) %{_libdir}/libplibjs.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibjs.so.0
-%attr(755,root,root) %{_libdir}/libplibnet.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibnet.so.0
-%attr(755,root,root) %{_libdir}/libplibpsl.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibpsl.so.0
-%attr(755,root,root) %{_libdir}/libplibpu.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibpu.so.0
-%attr(755,root,root) %{_libdir}/libplibpuaux.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibpuaux.so.0
-%attr(755,root,root) %{_libdir}/libplibpw.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibpw.so.0
-%attr(755,root,root) %{_libdir}/libplibsg.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibsg.so.0
-%attr(755,root,root) %{_libdir}/libplibsl.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibsl.so.0
-%attr(755,root,root) %{_libdir}/libplibsm.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibsm.so.0
-%attr(755,root,root) %{_libdir}/libplibssg.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibssg.so.0
-%attr(755,root,root) %{_libdir}/libplibssgaux.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibssgaux.so.0
-%attr(755,root,root) %{_libdir}/libplibul.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libplibul.so.0
+%{_libdir}/libplibfnt.so.*.*.*
+%ghost %{_libdir}/libplibfnt.so.0
+%{_libdir}/libplibjs.so.*.*.*
+%ghost %{_libdir}/libplibjs.so.0
+%{_libdir}/libplibnet.so.*.*.*
+%ghost %{_libdir}/libplibnet.so.0
+%{_libdir}/libplibpsl.so.*.*.*
+%ghost %{_libdir}/libplibpsl.so.0
+%{_libdir}/libplibpu.so.*.*.*
+%ghost %{_libdir}/libplibpu.so.0
+%{_libdir}/libplibpuaux.so.*.*.*
+%ghost %{_libdir}/libplibpuaux.so.0
+%{_libdir}/libplibpw.so.*.*.*
+%ghost %{_libdir}/libplibpw.so.0
+%{_libdir}/libplibsg.so.*.*.*
+%ghost %{_libdir}/libplibsg.so.0
+%{_libdir}/libplibsl.so.*.*.*
+%ghost %{_libdir}/libplibsl.so.0
+%{_libdir}/libplibsm.so.*.*.*
+%ghost %{_libdir}/libplibsm.so.0
+%{_libdir}/libplibssg.so.*.*.*
+%ghost %{_libdir}/libplibssg.so.0
+%{_libdir}/libplibssgaux.so.*.*.*
+%ghost %{_libdir}/libplibssgaux.so.0
+%{_libdir}/libplibul.so.*.*.*
+%ghost %{_libdir}/libplibul.so.0
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libplibfnt.so
-%attr(755,root,root) %{_libdir}/libplibjs.so
-%attr(755,root,root) %{_libdir}/libplibnet.so
-%attr(755,root,root) %{_libdir}/libplibpsl.so
-%attr(755,root,root) %{_libdir}/libplibpu.so
-%attr(755,root,root) %{_libdir}/libplibpuaux.so
-%attr(755,root,root) %{_libdir}/libplibpw.so
-%attr(755,root,root) %{_libdir}/libplibsg.so
-%attr(755,root,root) %{_libdir}/libplibsl.so
-%attr(755,root,root) %{_libdir}/libplibsm.so
-%attr(755,root,root) %{_libdir}/libplibssg.so
-%attr(755,root,root) %{_libdir}/libplibssgaux.so
-%attr(755,root,root) %{_libdir}/libplibul.so
+%{_libdir}/libplibfnt.so
+%{_libdir}/libplibjs.so
+%{_libdir}/libplibnet.so
+%{_libdir}/libplibpsl.so
+%{_libdir}/libplibpu.so
+%{_libdir}/libplibpuaux.so
+%{_libdir}/libplibpw.so
+%{_libdir}/libplibsg.so
+%{_libdir}/libplibsl.so
+%{_libdir}/libplibsm.so
+%{_libdir}/libplibssg.so
+%{_libdir}/libplibssgaux.so
+%{_libdir}/libplibul.so
 %{_libdir}/libplibfnt.la
 %{_libdir}/libplibjs.la
 %{_libdir}/libplibnet.la
